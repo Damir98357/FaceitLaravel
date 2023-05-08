@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Maps extends Model
 {
+    protected $fillable = ['name' , 'image_url'];
     use HasFactory;
 }
