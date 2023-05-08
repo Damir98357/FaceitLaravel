@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matchmakings', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('map_id')->constrained('maps');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time')->nullable();
-            $table->timestamps();
+        Schema::table('maps', function (Blueprint $table) {
+            //
+            $table->string('name');
         });
     }
 
@@ -25,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('matchmakings');
+        Schema::table('maps', function (Blueprint $table) {
+            //
+        });
     }
 };

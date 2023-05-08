@@ -9,4 +9,9 @@ class Maps extends Model
 {
     protected $fillable = ['name' , 'image_url'];
     use HasFactory;
+
+    public function matchmakings()
+    {
+        return $this->hasMany(Matchmaking::class);
+    }
 }
