@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('matchmakings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('map_id')->constrained('maps');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time')->nullable();
             $table->timestamps();
         });
     }
