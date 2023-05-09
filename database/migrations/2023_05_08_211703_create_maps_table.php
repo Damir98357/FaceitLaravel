@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('maps', function (Blueprint $table) {
-            $table->string('mapa')->after('naziv');
+        Schema::create('players', function (Blueprint $table) {
+            $table->string('maps')->after('naziv');
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('maps');
+       
     }
 };
