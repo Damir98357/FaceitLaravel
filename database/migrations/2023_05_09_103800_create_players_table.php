@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('maps', function (Blueprint $table) {
-            $table->string('mapa')->after('naziv');
+        Schema::create('players', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('naziv');
+            $table->integer('rolaId');
+            $table->integer('timId');
+            $table->timestamps();
         });
     }
 
@@ -21,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('maps');
+        Schema::dropIfExists('players');
     }
 };
